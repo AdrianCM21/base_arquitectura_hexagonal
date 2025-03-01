@@ -1,0 +1,3 @@
+imports:
+  - { resource: ./shared/application.yaml }
+  - { resource: ./facturador/application.yaml }

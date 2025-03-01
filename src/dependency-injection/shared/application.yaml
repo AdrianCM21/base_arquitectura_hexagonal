@@ -1,0 +1,12 @@
+services:
+  Shared.Events.EventBus:
+    class: ../../contexts/shared/infrastructure/eventBus/InMemoryEventBus
+    arguments: []
+
+  Shared.Services.EncryptionService:
+    class: ../../contexts/shared/infrastructure/services/AESEncryptionService
+    arguments: []
+
+  Shared.Services.Hasher:
+    class: ../../contexts/shared/infrastructure/services/BcryptHasher
+    arguments: []
