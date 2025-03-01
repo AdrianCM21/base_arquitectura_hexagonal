@@ -1,0 +1,16 @@
+{
+  "name": "base_arquitectura_hexagonal",
+  "version": "1.0.0",
+  "description": "Base para iniciar de manera rapida cualquier proyecto utilizando la arquitectura hexagonal",
+  "main": "index.js",
+  "author": "AdrianCM21",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc && copyfiles 'src/**/*.yaml' build",
+    "dev": "tsnd --respawn --clear src/index.ts",
+    "start": "npm run build && node build/src/index"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
