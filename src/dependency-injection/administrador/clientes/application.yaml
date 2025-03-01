@@ -1,0 +1,36 @@
+services:
+  Administrador.Repositories.ClienteRepository:
+    class: ../../../contexts/administrador/clientes/infrastructure/repositories/TypeORMClienteRepository
+    arguments: []
+
+  Administrador.Clientes.UseCase.CreateClienteUseCase:
+    class: ../../../contexts/administrador/clientes/application/useCases/CreateClienteUseCase
+    arguments: ['@Administrador.Repositories.ClienteRepository']
+
+  Administrador.Clientes.UseCase.GetClienteUseCase:
+    class: ../../../contexts/administrador/clientes/application/useCases/GetClienteUseCase
+    arguments: ['@Administrador.Repositories.ClienteRepository']
+
+  Administrador.Clientes.UseCase.ListClientesUseCase:
+    class: ../../../contexts/administrador/clientes/application/useCases/ListClientesUseCase
+    arguments: ['@Administrador.Repositories.ClienteRepository']
+
+  Administrador.Clientes.UseCase.UpdateClienteUseCase:
+    class: ../../../contexts/administrador/clientes/application/useCases/UpdateClienteUseCase
+    arguments: ['@Administrador.Repositories.ClienteRepository']
+
+  Administrador.Clientes.Controllers.CreateClienteController:
+    class: ../../../contexts/administrador/clientes/infrastructure/controllers/CreateClienteController
+    arguments: ['@Administrador.Clientes.UseCase.CreateClienteUseCase']
+
+  Administrador.Clientes.Controllers.GetClienteController:
+    class: ../../../contexts/administrador/clientes/infrastructure/controllers/GetClienteController
+    arguments: ['@Administrador.Clientes.UseCase.GetClienteUseCase']
+
+  Administrador.Clientes.Controllers.ListClientesController:
+    class: ../../../contexts/administrador/clientes/infrastructure/controllers/ListClientesController
+    arguments: ['@Administrador.Clientes.UseCase.ListClientesUseCase']
+
+  Administrador.Clientes.Controllers.UpdateClienteController:
+    class: ../../../contexts/administrador/clientes/infrastructure/controllers/UpdateClienteController
+    arguments: ['@Administrador.Clientes.UseCase.UpdateClienteUseCase']

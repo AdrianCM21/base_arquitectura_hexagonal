@@ -1,24 +1,20 @@
 services:
-  Facturador.Repositories.UsuarioRepository:
-    class: ../../../contexts/facturador/usuarios/infrastructure/repositories/TypeORMUsuarioRepository
+  Administrador.Repositories.UsuarioRepository:
+    class: ../../../contexts/administrador/usuarios/infrastructure/repositories/TypeORMUsuarioRepository
     arguments: []
 
-  Facturador.Services.AuthenticationService:
-    class: ../../../contexts/facturador/usuarios/infrastructure/services/JWTAuthenticationService
-    arguments: ['@Facturador.Repositories.UsuarioRepository']
+  Administrador.Services.AuthenticationService:
+    class: ../../../contexts/administrador/usuarios/infrastructure/services/JWTAuthenticationService
+    arguments: ['@Administrador.Repositories.UsuarioRepository']
 
-  Facturador.Usuarios.UseCases.LoginUseCase:
-    class: ../../../contexts/facturador/usuarios/application/useCases/LoginUseCase
-    arguments: ['@Facturador.Services.AuthenticationService']
-  
-  Facturador.Usuarios.UseCases.CheckIsAuthenticatedUseCase:
-    class: ../../../contexts/facturador/usuarios/application/useCases/CheckIsAuthenticatedUseCase
-    arguments: ['@Facturador.Services.AuthenticationService']
-  
-  Facturador.Usuarios.Controllers.LoginController:
-    class: ../../../contexts/facturador/usuarios/infrastructure/controllers/LoginController
-    arguments: ['@Facturador.Usuarios.UseCases.LoginUseCase']
-  
+  Administrador.Usuarios.UseCases.LoginUseCase:
+    class: ../../../contexts/administrador/usuarios/application/useCases/LoginUseCase
+    arguments: ['@Administrador.Services.AuthenticationService']
 
-  
-    
+  Administrador.Usuarios.UseCases.CheckIsAuthenticatedUseCase:
+    class: ../../../contexts/administrador/usuarios/application/useCases/CheckIsAuthenticatedUseCase
+    arguments: ['@Administrador.Services.AuthenticationService']
+
+  Administrador.Usuarios.Controllers.LoginController:
+    class: ../../../contexts/administrador/usuarios/infrastructure/controllers/LoginController
+    arguments: ['@Administrador.Usuarios.UseCases.LoginUseCase']

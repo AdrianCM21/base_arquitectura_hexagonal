@@ -1,6 +1,3 @@
 imports:
-  - { resource: ./empresas/application.yaml }  
-  - { resource: ./usuarios/application.yaml }  
-  - { resource: ./clientes/application.yaml }  
-  - { resource: ./productos/application.yaml }  
-  - { resource: ./documentosElectronicos/application.yaml }  
+  - { resource: ./usuarios/application.yaml }
+  - { resource: ./clientes/application.yaml }
